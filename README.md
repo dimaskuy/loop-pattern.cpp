@@ -2,3 +2,5 @@
 <h2>A Bunch of Loop Pattern Code in C++.</h2>
 
 > for study or assignment of basic algorithm purpose.
+- Basic HTML/CSS/JS (+ NodeJS feature)
+- [Prism.JS](https://prismjs.com/) for C++ languages syntax support.
