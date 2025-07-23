@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" style="scroll-behavior: smooth">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Looping & Nested Conditional - C++</title>
+        <link href="prism-js/prism.css" rel="stylesheet" />
+        <style media="screen">
+            body {
+                font-family: Helvetica, sans-serif;
+            }
+            a {
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: wavy underline;
+            }
+            a:active {
+                color: inherit;
+            }
+            #code-box {
+                background: #333;
+                color: #eee;
+                overflow: auto;
+                border-radius: 20px;
+            }
+            .language-cpp {
+                font-size: 1.4rem !important;
+                font-weight: normal;
+                width: 100%;
+                border-radius: 20px;
+            }
+            #fixed {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                margin: 10px;
+                border-radius: 10px;
+                font-size: 1.3rem;
+                text-decoration: none;
+                background: darkorange;
+                padding: 8px;
+                color: #fff;
+                font-weight: bold;
+                transition: 0.3s;
+                opacity: 0.8;
+            }
+            #fixed:hover {
+                background: darkorange;
+                transform: translateY(-2px);
+                opacity: 1;
+            }
+            h1 {
+                text-align: center;
+            }
+            div {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            h2 {
+                background: rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                width: 70vw;
+                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+                border: 2px solid #333;
+                border-radius: 20px;
+                margin-right: 25px;
+                font-family: monospace, sans-serif;
+            }
+            .pola-desc {
+                color: #333;
+            }
+            i {
+                font-style: normal;
+            }
+            b {
+                color: #39d;
+            }
+            p {
+                display: inline;
+                color: purple;
+            }
+            p#footer {
+                color: rgba(0, 0, 0, 0.4);
+                font-weight: bold;
+            }
+            p#footer > a {
+                color: rgba(0, 0, 0, 0.7);
+            }
+            .btnCode {
+                border: none;
+                padding: 10px;
+                box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
+                transition: 0.3s all;
+                transition-property: transform, box-shadow;
+                background: #0078d7;
+                cursor: pointer;
+                font: 16px monospace, sans-serif;
+                font-weight: bold;
+                border: 2px solid #333;
+                color: #eee;
+            }
+            .btnCode:hover {
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+                border: inherit solid black;
+                background: #39d;
+                transform: translateY(-2px);
+            }
+            .btnCode:active {
+                transform: scale(0.95);
+            }
+            @media (max-width: 768px) {
+                #fixed {
+                    font-size: 0.9rem;
+                }
+                h2 {
+                    margin-right: 0;
+                    width: 80vw;
+                }
+                .language-cpp {
+                    font-size: 1rem !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            <code><a href="">Pengulangan dan Pengkondisan Bersarang</a> </code>
+        </h1>
+        <h3 align="center">Looping Pattern (versi C++) ~~</h3>
+        <h4 align="center"><em>*a starter template</em> (can be modified).</h4>
+        <hr />
+
+        <a href="#code-box" id="fixed">Code ⬆️</a>
+
+        <div class="code-container">
+            <h2 id="code-box">
+                Script/ Source Code:
+                <pre><code id="code" class="language-cpp line-numbers">cout << "klik salah satu tombol.." << endl</code></pre>
+                <div class="text-preview">...</div>
+            </h2>
+        </div>
+
+        <div>
+            <h2>
+                <b>Pola-1 | <span class="pola-desc"></span></b>
+                <pre><code>
+    *****
+    *****
+    *****
+    *****
+    *****
+    *****
+    *****
+    ...
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola1">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-2 | <span class="pola-desc"></span></b>
+                <pre><code>
+    *
+    **
+    ***
+    ****
+    *****
+    ******
+    *******
+    ...
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola2">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-3 | <span class="pola-desc"></span></b>
+                <pre><code>
+    ...
+    *******
+    ******
+    *****
+    ****
+    ***
+    **
+    *
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola3">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-4 | <span class="pola-desc"></span></b>
+                <pre><code>
+    *
+    **
+    ***
+    ****
+    *****
+    ******
+    *******
+    ********
+    *********
+    **********
+    **********
+    *********
+    ********
+    *******
+    ******
+    *****
+    ****
+    ***
+    **
+    *
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola4">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-5 | <span class="pola-desc"></span></b>
+                <pre><code>
+    1
+    22
+    333
+    4444
+    55555
+    666666
+    ...
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola5">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-6 | <span class="pola-desc"></span></b>
+                <pre><code>
+    1
+    12
+    123
+    1234
+    12345
+    123456
+    ...
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola6">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-7 | <span class="pola-desc"></span></b>
+                <pre><code>
+              *
+             **
+            ***
+           ****
+          *****
+         ******
+        *******
+       ********
+      *********
+     **********
+    ***********
+    ***********
+     **********
+      *********
+       ********
+        *******
+         ******
+          *****
+           ****
+            ***
+             **
+              *
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola7">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-8 | <span class="pola-desc"></span></b>
+                <pre><code>
+            *
+           ***
+          *****
+         *******
+        *********
+         *******
+          *****
+           ***
+            *
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola8">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-9 | <span class="pola-desc"></span></b>
+                <pre><code>
+           *
+          ***
+         *****
+        *******
+       *********
+      ***********
+     *************
+    ***************
+   *****************
+  *******************
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola9">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-10 | <span class="pola-desc"></span></b>
+                <pre><code>
+  *******************
+   *****************
+    ***************
+     *************
+      ***********
+       *********
+        *******
+         *****
+          ***
+           *
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola10">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-11 | <span class="pola-desc"></span></b>
+                <pre><code>
+    # # # # # #
+     # # # # # #
+    # # # # # #
+     # # # # # #
+    # # # # # #
+     # # # # # #
+    # # # # # #
+     # # # # # #
+    # # # # # #
+     # # # # # #
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola11">Jalankan!</button>
+            </h2>
+
+            <h2>
+                <b>Pola-12 | <span class="pola-desc"></span></b>
+                <pre><code>
+0
+1 1
+2 3 5
+8 13 21 34
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola12">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-13 | <span class="pola-desc"></span></b>
+                <pre><code>
+*     *
+ *   *
+  * *
+   *
+  * *
+ *   *
+*     *
+
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola13">Jalankan!</button>
+            </h2>
+
+            <h2>
+                <b>Pola-14 | <span class="pola-desc"></span></b>
+                <pre><code>
+      <em>(contoh 5x5)</em>
+      1  2  3  4  5
+      10  9  8  7  6
+      11 12 13 14 15
+      20 19 18 17 16
+      21 22 23 24 25
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola14">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-15 | <span class="pola-desc"></span></b>
+                <pre><code>
+A
+BB
+CCC
+DDDD
+EEEEE
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola15">Jalankan!</button>
+            </h2>
+
+            <h2>
+                <b>Pola-16 | <span class="pola-desc"></span></b>
+                <pre><code>
+A
+AB
+ABC
+ABCD
+ABCDE
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola16">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-17 | <span class="pola-desc"></span></b>
+                <pre><code>
+A       B
+ C     D 
+  E   F  
+   G H   
+    I 
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola17">Jalankan!</button>
+            </h2>
+            <h2>
+                <b>Pola-18 | <span class="pola-desc"></span></b>
+                <pre><code>
+*******
+*     *
+* *** *
+* * * *
+* *** *
+*     *
+*******
+      </code></pre>
+                <button type="button" class="btnCode" data-runTo="pola18">Jalankan!</button>
+            </h2>
+        </div>
+
+        <footer align="center">
+            <p id="footer">by <a href="https://github.com/dimaskuy" target="_blank">DimasRS</a></p>
+        </footer>
+
+        <script src="prism-js/prism.js"></script>
+        <script src="script.js" type="module" charset="utf-8"></script>
+    </body>
+</html>
