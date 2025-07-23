@@ -3,4 +3,4 @@
 
 > for study or assignment of basic algorithm purpose.
 - Basic HTML/CSS/JS (+ NodeJS feature)
-- [Prism.JS](https://prismjs.com/) for C++ languages syntax support.
+- [Prism.JS](https://prismjs.com/) for C++ language syntax support.
