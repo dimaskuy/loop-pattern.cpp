@@ -20,7 +20,7 @@ int main() {
     ],
 
     pola2: [
-        "Segitiga Rata Kiri 💔 (naik)",
+        "Segitiga Rata Kiri (naik) 📈",
         `#include <iostream>
 #include <string>
 using namespace std;
@@ -40,7 +40,7 @@ int main() {
     ],
 
     pola3: [
-        "Segitiga Rata Kanan 😎 (turun)",
+        "Segitiga Rata Kiri (turun) 📉",
         `#include <iostream>
 #include <string>
 using namespace std;
